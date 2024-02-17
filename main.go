@@ -10,6 +10,7 @@ func main() {
 	player1.DisplayInfo()
 	player1.DeleteHealth(40)
 	player1.DisplayInfo()
+	//player1.HiddenAbility()
 
 	player2 := warrior.NewWarrior("Aragon", "Warrior", 100, "Red")
 	player2.DisplayInfo()

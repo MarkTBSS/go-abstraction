@@ -1,11 +1,10 @@
 package novice
 
-import "fmt"
+import (
+	"fmt"
 
-type INovice interface {
-	DisplayInfo()
-	DeleteHealth(damage int)
-}
+	"github.com/MarkTBSS/go-abstraction/player"
+)
 
 type Novice struct {
 	name      string
@@ -14,7 +13,7 @@ type Novice struct {
 }
 
 // Constructor
-func NewNovice(name, classname string, health int) INovice {
+func NewNovice(name, classname string, health int) player.IPlayer {
 	return &Novice{
 		name:      name,
 		classname: classname,
@@ -34,4 +33,8 @@ func (n *Novice) DeleteHealth(damage int) {
 	} else {
 		n.health -= damage
 	}
+}
+
+func (n *Novice) Error() string {
+	return " "
 }
